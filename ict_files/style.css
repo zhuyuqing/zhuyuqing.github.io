@@ -1,0 +1,95 @@
+
+  h1,h2,h3,h4,h5,h6,pre,code,p {font-size: 0.9em;}
+  dl,li,dt,dd,h1,h2,h3,h4,h5,h6,pre,form,body,html,p,blockquote,fieldset,input {margin: 0; padding: 0;}
+  a img,:link img,:visited img {border: none;}
+  address {font-style: normal;}html {background:#fff;}
+  body {background:#fff;font-family:'Verdana','Helvetica', 'Arial', sans-serif;font-size:0.85em;}
+  a {color:#666666;text-decoration:underline !important;}
+  a:visited {color:#666666;}
+  a:hover {font-weight:bold;}
+  b, strong {font-weight:bold;}
+  blockquote {border-left:1px solid #ccc;margin:1em 3em;padding-left:1em;font-size:0.9em;}
+  blockquote p {line-height:1.45em;}
+  em {font-style:italic;}
+  h1, h2, h3, h4, h5, h6 {font-weight:normal;margin:1.5em 0 0.5em 0;}
+  h1 {font-size:1.8em;color:#666;margin:0;font-weight: bold;}
+  h2 {font-size:1.5em;color:#333;font-weight: bold;}
+  h3 {font-size:1.1em;color:#c83f55;font-weight: bold;}
+  h4 {font-size:1.15em;color:#333;font-weight: bold;}
+  h5 {font-size:1em;}
+  h6 {line-height:1.75em;}
+  p, li {color:#000;line-height:1.75em;margin:0 0 1.5em 0;}
+  blockquote p, table p, dd p, li p, #header p {margin-bottom:0.5em;}
+  ul, ol {margin:1em 0; padding-left: 0em;}
+  li {margin:0.85em 0;}
+  ul li {list-style-type:disc;}
+  ol li {list-style-type:decimal;}
+  table {border:1px solid #ccc;border-width:1px 1px 0 1px;}
+  table caption {display:block;font-style:italic;white-space:nowrap;margin:0.5em 1em;}
+  table td, table th {padding:0.5em 1em;text-align:left;vertical-align:top;}
+  table th {font-weight:bold;border-bottom:1px solid #999;}
+  table td {border-bottom:1px solid #ddd;}
+
+
+* {
+    padding: 0;
+    margin: 0;
+} 
+
+body {
+background: #fff;
+}
+
+#wrap {
+width: 800px;
+margin: 40px auto;
+}
+
+#header {
+background: #fff no-repeat;
+height: 210px;
+padding: 20px;
+}
+#header h1 {
+font-size: 25px;
+letter-spacing: -1px;
+padding: 40px 0px 0px 50px;
+text-decoration: none;
+}
+#header h1 a {
+text-decoration: none;
+color: #EC8714;
+}
+#header h1 a:hover {
+text-decoration: none;
+color: #000;
+}
+
+#menu {
+height: 60px;
+background: #fff repeat-y;
+padding: 15px 0 0 50px;
+}
+
+#content {
+background: #fff repeat-y;
+padding: 20px;
+}
+
+.main {
+border-top: 1px solid #aaa;
+padding: 20px;
+}
+
+#bottom {
+background: #fff no-repeat;
+padding: 10px 0;
+}
+
+#footer {
+font-size: 11px;
+color: #999;
+text-align: center;
+}
+
+

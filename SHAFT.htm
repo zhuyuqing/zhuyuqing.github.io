@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)http://prof.ict.ac.cn/~yuqing/SHAFT/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="./SHAFT_files/bootstrap.css">
+<link rel="stylesheet" href="./SHAFT_files/bootstrap-responsive.css">
+<link rel="stylesheet" href="./SHAFT_files/docs.css">
+<link rel="stylesheet" href="./SHAFT_files/jumbo.css">
+<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+    <![endif]-->
+<title>SHAFT</title>
+</head>
+<body data-spy="scroll" data-target=".bs-docs-sidebar">
+<div class="container">
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner"> <a class="brand" href="http://prof.ict.ac.cn/~yuqing/SHAFT/#">SHAFT</a>
+      <ul class="nav">
+        <li class="active"><a href="http://prof.ict.ac.cn/~yuqing/SHAFT/#">Home</a></li>
+        <li><a href="http://prof.ict.ac.cn/~yuqing/SHAFT/#overview">Overview</a></li>
+        <li><a href="http://prof.ict.ac.cn/~yuqing/SHAFT/#statements">Statements</a></li>
+        <li><a href="http://prof.ict.ac.cn/~yuqing/SHAFT/#downloads">Download</a></li>
+        <li><a href="http://prof.ict.ac.cn/~yuqing/SHAFT/#pub">Publication</a></li>
+        <li><a href="http://prof.ict.ac.cn/~yuqing/SHAFT/#info">More Information</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+      <header class="jumbotron masthead">
+        <h1>SHAFT</h1><br>
+        <h2>Serializable, Highly Available, and Fault-tolerant Transactions</h2>
+        <p class="lead">----A new distributed concurrency control protocol for efficiently achieving serializability, high availability, and fault tolerancy in databases across data centers.</p>
+      </header>
+<div class="container">
+  <div class="row-fluid">
+    <div class="span2 bs-docs-sidebar">
+      <ul class="nav nav-list bs-docs-sidenav affix-top">
+        <li class="active"><a href="http://prof.ict.ac.cn/~yuqing/SHAFT/#Introduction"><i class="icon-chevron-right"></i>Introduction</a></li>
+        <li class=""><a href="http://prof.ict.ac.cn/~yuqing/SHAFT/#overview"><i class="icon-chevron-right"></i>Overview</a></li>
+        <li class=""><a href="http://prof.ict.ac.cn/~yuqing/SHAFT/#statements"><i class="icon-chevron-right"></i>Statements</a></li>
+        <li class=""><a href="http://prof.ict.ac.cn/~yuqing/SHAFT/#downloads"><i class="icon-chevron-right"></i>Download</a></li>
+        <li class=""><a href="http://prof.ict.ac.cn/~yuqing/SHAFT/#pub"><i class="icon-chevron-right"></i>Publication</a></li>
+        <li class=""><a href="http://prof.ict.ac.cn/~yuqing/SHAFT/#info"><i class="icon-chevron-right"></i>More Information</a></li>
+      </ul>
+    </div>
+    <!-- span3 -->
+    <div class="span6">
+      <section id="Introduction">
+        <h2 class="page-header">Introduction</h2>
+        <h3 class="subhead">What is SHAFT</h3>
+        <p>SHAFT is a new distributed concurrency control protocol, which guarantees serializability, high availability and fault tolerance simultaneously for transactions in databases across data centers.It implements strict two-phase locking in the distributed environment, and with the fault-tolerance guarantee. The SHAFT protocol can be implemented in any system that partitions, distributes and replicates data in a large scale. Even if the partition, the distribution and the replication is not uniform, e.g. not full replica in a datacenter or datacenters with different partition sets, our proposal is also feasible.</p>
+      </section>
+      <!-- End Section introduction -->
+      <section id="overview">
+        <h2 class="page-header">Overview</h2>
+        <h3 class="subhead">Motivation</h3>
+        <p>Transaction support is a very valuable feature for database-backed applications. The lack of strong consistency semantics, e.g. transaction support, can lead to great difficulty of application development. Among all isolation levels, serializability is the most desirable one by applications. On the other hand, high availability and fault-tolerance are two important properties of systems in the cloud. Thus, it is desirable to have transaction support with serializability, high availbility and fault-tolerance guarantees simultaneously.</p>
+        <h3 class="subhead">Key Idea</h3>
+        </p>To achieve high availability and fault tolerance, we exploit the Paxos algorithm as the basis. However, we incarnate the roles of the Paxos algorithm differently from other proposals, including the leader election and the configuration determination. We also update the operation semantics of the Paxos algorithm, such that a Paxos-based distributed two phase locking procedure is implemented to guarantee serializability. The updated operation semantics include consensus and majority. SHAFT allows a client to actively abort its submitted transaction by using two Paxos instances. If the user never aborts a transaction after initiation as in MDCC or for read-only transactions, SHAFT requires only one Paxos instance.</p>
+        <h3 class="subhead">Implementation</h3>
+        <p>We implement SHAFT protocol in the large-scale network simulator PeerSim. We use the event-based framework. We also implement multiple controls to simulate different system conditions, e.g. various multi-datacenter scenarios, node and datacenter failures, workloads, replication strategies, etc.</p>
+      </section>
+      <!-- end section overview -->
+      <section id="statements">
+        <h2 class="page-header">Statements</h2>
+        <p>The work of SHAFT is supported by the National Natural Science Foundation of China (Grant No.61303054).</p>
+        <p>SHAFT implementation will be made available soon. Involved software components are governed by their own licensing terms. Users intending to use SHAFT are required to fully understand abide by the licensing terms of the involving components.</p>
+      </section>
+      <!-- End Liscense -->
+      <section id="downloads">
+        <h2 class="page-header">Download</h2>
+        <p>If you want to try or use SHAFT, you can click the following link to download the implementation (to be made available soon).</p>
+        <p><a href="http://prof.ict.ac.cn/~yuqing/SHAFT/#" class="btn btn-info">SHAFT over PeerSim</a></p>
+      </section>
+      <section id="pub">
+        <h2 class="page-header">Publications</h2>      
+        <p style="margin: 0px 0px 2px;"><strong>SHAFT: Serializable, Highly Available and Fault Tolerant Concurrency Control in the Cloud [<a href="http://prof.ict.ac.cn/~yuqing/SHAFT/shaft.pdf" target="_blank">PDF</a>]</strong></p>
+        <p class="muted">In Proc. of ICPADS 2015.</p>
+        
+      </section>
+      <section id="info">
+        <h2 class="page-header">More Information</h2>
+        <p>SHAFT was developed in the Advanced Computer System Lab at Institute of Computing Technology, Chinese Academy of Sciences. Read our SHAFT papers or download our SHAFT protocol simulation implementation (after October 2013), if you are interested in more details. If you have any comments or questions, feel free to email us at: <strong>zhuyuqing@ict.ac.cn</strong>.</p>
+      </section>
+    </div>
+    <!-- End span9 -->
+    <div class="span3">
+      <div class="tabbable" style="margin-top:50px;">
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="http://prof.ict.ac.cn/~yuqing/SHAFT/#news" data-toggle="tab">News</a></li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane in active" id="news">
+            <ul>
+              <li>SHAFT proposal finalized (2013-07-21)</li>
+              <li>SHAFT webpage online (2013-08-19)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="btn-group"> <a href="http://prof.ict.ac.cn/~yuqing/SHAFT/#" target="_blank" class="btn btn-success">SHAFT Codes</a> <a href="http://prof.ict.ac.cn/~yuqing/SHAFT/shaft.pdf" target="_blank" class="btn btn-info">SHAFT Paper</a> </div>
+    </div>
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p><a href="http://www.carch.ac.cn/" target="_blank">State Key Lab of Computer Architecture, ICT, CAS</a></p>
+    <p>Last Updated on August 19 2013</p>
+  <p><a href="http://www2.clustrmaps.com/user/97410e9ac"><img src="http://www2.clustrmaps.com/stats/maps-no_clusters/prof.ict.ac.cn-~yuqing-SHAFT-thumb.jpg" alt="Locations of visitors to this page" /></a></p>
+  </div>
+</footer>
+
+<script src="./SHAFT_files/jquery-1.9.1.min.js"></script>
+<script src="./SHAFT_files/bootstrap-transition.js"></script>
+<script src="./SHAFT_files/bootstrap-alert.js"></script>
+<script src="./SHAFT_files/bootstrap-modal.js"></script>
+<script src="./SHAFT_files/bootstrap-dropdown.js"></script>
+<script src="./SHAFT_files/bootstrap-scrollspy.js"></script>
+<script src="./SHAFT_files/bootstrap-tab.js"></script>
+<script src="./SHAFT_files/bootstrap-tooltip.js"></script>
+<script src="./SHAFT_files/bootstrap-popover.js"></script>
+<script src="./SHAFT_files/bootstrap-button.js"></script>
+<script src="./SHAFT_files/bootstrap-collapse.js"></script>
+<script src="./SHAFT_files/bootstrap-carousel.js"></script>
+<script src="./SHAFT_files/bootstrap-typeahead.js"></script>
+<script src="./SHAFT_files/bootstrap-affix.js"></script>
+<script src="./SHAFT_files/holder.js"></script>
+<script src="./SHAFT_files/application.js"></script>
+</body></html>
